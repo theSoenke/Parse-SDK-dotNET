@@ -118,7 +118,7 @@ namespace Parse {
     /// Performs a ConvertTo, but returns null if the object can't be
     /// converted to that type.
     /// </summary>
-    internal static T As<T>(object value) where T : class {
+    public static T As<T>(object value) where T : class {
       return ConvertTo<T>(value) as T;
     }
 
@@ -132,7 +132,7 @@ namespace Parse {
     /// JSON deserialization can be safely assumed to be lists or dictionaries of
     /// objects.
     /// </summary>
-    internal static object ConvertTo<T>(object value) {
+    public static object ConvertTo<T>(object value) {
       if (value is T || value == null) {
         return value;
       }
