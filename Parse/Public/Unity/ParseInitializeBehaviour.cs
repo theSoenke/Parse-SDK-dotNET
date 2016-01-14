@@ -49,6 +49,11 @@ namespace Parse {
       }
     }
 
+    /// <summary>
+    /// Delegate function that will be called when the player pauses the game.
+    /// </summary>
+    /// <seealso href="http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnApplicationPause.html"/>
+    /// <param name="paused"><c>true</c> if the application is paused.</param>
     public void OnApplicationPause(bool paused) {
       if (PlatformHooks.IsAndroid) {
         PlatformHooks.CallStaticJavaUnityMethod("com.parse.ParsePushUnityHelper", "setApplicationPaused", new object[] { paused });
@@ -72,7 +77,7 @@ namespace Parse {
 
     /// <summary>
     /// The callback that will be called from the Android Java land via <c>UnityPlayer.UnitySendMessage(string)</c>
-    /// when the device receive a push notificaiton.
+    /// when the device receive a push notification.
     /// </summary>
     /// <param name="pushPayloadString">the push payload as string</param>
     internal void OnPushNotificationReceived(string pushPayloadString) {

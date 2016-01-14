@@ -82,6 +82,9 @@ namespace Parse {
       }
     }
 
+    /// <summary>
+    /// The time at which this push will be sent.
+    /// </summary>
     public DateTime? PushTime {
       get { return state.PushTime; }
       set {
@@ -134,7 +137,7 @@ namespace Parse {
     }
 
     /// <summary>
-    /// A conveninence method which sets Data to a dictionary with alert as its only field. Equivalent to
+    /// A convenience method which sets Data to a dictionary with alert as its only field. Equivalent to
     ///
     /// <code>
     /// Data = new Dictionary&lt;string, object&gt; {{"alert", alert}};
